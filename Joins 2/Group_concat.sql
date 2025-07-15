@@ -1,14 +1,4 @@
-USE gestion_descargas;
-select u.name as User_name, list.name as Lista_podcast_name, pod.nombre as podcast_name
-from user as u, lista_descarga as list, podcast as pod
-where list.User_user_id= u.user_id AND pod.podcast_id= list.lista_descarga_id;
-
-
-select u.name, ld.name, p.nombre from user u, lista_descarga ld, detalle_descarga dd, podcast p
-where u.user_id = ld.User_user_id
-and ld.lista_descarga_id = dd.lista_descarga_id
-and dd.podcast_id = p.podcast_id
-and u.user_id=1;
+USE educacion;
 
 select  e.nombre as nombre_estudiante, group_concat(a.nombre separator', ') as asignaturas,
 c.id_colegio as id_colegio, c.nombre as nombre_colegio, c. ubicacion as cole_ubicacion
